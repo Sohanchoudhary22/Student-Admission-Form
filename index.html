@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        nav{
+            width:100%;
+            display: flex;
+            height: auto;
+            background-color: rgb(111, 118, 177);
+            gap: 70px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        nav img{
+            width:12%;
+           padding: 5px;
+            margin-left: 100px;
+            border-radius: 100px;
+
+        }
+        h1{
+            color: rgb(14, 11, 11);
+            font-size: 35px;
+        }
+        .form{
+            border: 1px solid gray;
+            width: 40%;
+            height: auto;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>
+            <img src="../Student-Admission-Form/istockphoto.jpg" alt="">
+        </div>
+        <div>
+            <h1>Admission Form</h1>
+        </div>
+    </nav>
+    <form id="form">
+         <div>
+            <label for="">Name:-</label><br><input type="text" placeholder="Enter your name" id="name"><br><br>
+            <label for="">Email:-</label><br><input type="email" placeholder="Enter your email" id="email"><br><br>
+            <label for="">Mobile:-</label><br><input type="number" placeholder="Enter your number" id="mobile">
+         </div>
+         <div>
+             <button>Submit</button>
+             <button>Reset</button>
+        </div>
+    </form>
+    <div id="display_data"></div>
+</body>
+<script>
+    let arr= JSON.parse(localStorage.getItem("user"))||[];
+    let form= document.getElementById("form")
+    function getData(e){
+        e.preventDefault()
+
+        let obj={
+            name:document.getElementById("name").value,
+            email:document.getElementById("email").value,
+            mobile:document.getElementById("mobile").value,
+        }
+        arr.push(obj)
+        localStorage.setItem("user",JSON.stringify(arr))
+        displayData(arr)
+        form.reset()
+    }
+    let btn= document.getElementById("btn")
+    btn.addEventListener("click", getData)
+
+    function displayData(data){
+        display_data.innerHTML= null
+
+          let table= document.createElement("table")
+          let thead= document.createElement("thead")
+          let tbody= document.createElement("tbody")
+          let tr= document.createElement("tr")
+          let th= document.createElement("th")
+          th.innerText= "Sr.no"
+          let th1= document.createElement("th")
+          th1.innerText= "Name"
+          let th2= document.createElement("th")
+          th2.innerText= "Email"
+          let th3= document.createElement("th")
+          th3.innerText= "Mobile"
+
+          tr.append(th,th1,th2,th3)
+          thead.append(tr)
+          table.append(thead)
+
+        data.forEach(ele => {
+            
+       
+          let display_data= document.getElementById("display_data")
+          let tr= document.createElement("tr")
+          let td= document.createElement("td")
+          td.innerText= data.indexOf(ele)+1
+          let td1= document.createElement("td")
+          td1.innerText= data.name
+          let td2= document.createElement("td")
+          td2.innerText= data.email
+          let td3= document.createElement("td")
+          td3.innerText= data.mobile
+        })
+    }
+</script>
+</html>
