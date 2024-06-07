@@ -21,6 +21,12 @@
             top: 0;
             z-index: 1;
         }
+        .nav-h1{
+            width: 60%;
+        }
+        .nav-img{
+            width: 40%;
+        } 
         nav img{
             width:12%;
            padding: 5px;
@@ -33,7 +39,6 @@
             font-size: 35px;
         }
         .data{
-            /* border: 1px solid red; */
             background-color: rgb(243, 242, 242);
             width:100%;
             height:635px;
@@ -82,7 +87,6 @@
             width:100%;
             margin: auto;
             text-align: center;
-            
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         }
         th{
@@ -131,22 +135,180 @@
             font-size:15px;
         }
       @media screen and (min-width:200px) and (max-width:420px) {
-          .nav{
-            gap: 20px;
-          }
-          .nav img{
+        nav{
+            gap:8px;
+        }
+        .nav-h1{
+            width: 70%;
+        }
+        .nav-img{
+            width:30%;
+            margin-top:8px;
+        } 
+        nav img{
+           width: 40%;
             margin-left: 20px;
-            padding: 0;
-          }
+        }
+        h1{
+            width: 100%;
+            font-size:25px;
       }
+      .data{
+        display: block;
+        height: 800px;
+      }
+      #form{
+        width: 60%;
+        height: 250px;
+        padding: 20px;
+        margin: auto;
+        margin-top: 30px;
+      }
+      input{
+        width:95%;
+      }
+      #btn{
+        margin:25px 
+      }
+      button{
+        width: 40%;
+      }
+      #Table{
+        width: 50%;
+      }
+      th{
+        font-size: 15px;
+      }
+      .footer{
+            gap:15px;
+            height: 100px;
+        }
+        .footer div{
+           margin-top: 12px;
+           margin-bottom:8px;
+        }
+        #first{
+            width: 30%;
+            margin-left:30px;
+        }
+        #first img{
+            width:35%;
+            height: 40px;
+        }
+        a{
+            color: white;
+            font-size:12px;
+            text-decoration: none;
+        }
+        #second{
+            width: 30%;
+            display: grid;
+        
+        }
+        #third{
+            width:30%;
+            display: grid;
+        }
+        h4{
+            font-size: 9px;
+        }
+    }
+    @media screen and (min-width:420px) and (max-width:1080px) {
+        nav{
+            gap:10px;
+        }
+        .nav-h1{
+            width: 70%;
+        }
+        .nav-img{
+            width:30%;
+            margin-top:8px;
+        } 
+        nav img{
+          width: 35%;
+            margin-left: 20px;
+        }
+        h1{
+            font-size:35px;
+      }
+      .data{
+        border: 1px solid red;
+        display: block;
+        height: auto;
+        height: 800px;
+      }
+      #form{
+        width:40%;
+        height:315px;
+        padding: 20px;
+        margin: auto;
+        margin-top: 30px;
+        font-size: 25px;
+      }
+      input{
+        width:95%;
+        height: 35px;
+        font-size: 20px;
+      }
+      #btn{
+        margin:25px 
+      }
+      button{
+        width: 40%;
+      }
+      #Table{
+        margin: auto;
+        width: 80%;
+        margin-top: 60px;
+      }
+      table{
+        font-size: 20px;
+      }
+      th{
+        font-size: 25px;
+      }
+      .footer{
+            gap:15px;
+            height: 150px;
+        }
+        .footer div{
+           margin-top: 12px;
+           margin-bottom:8px;
+        }
+        #first{
+            width: 25%;
+            margin-left:50px;
+        }
+        #first img{
+            width:35%;
+            height: 65px;
+        }
+        a{
+            color: white;
+            font-size:15px;
+            text-decoration: none;
+        }
+        #second{
+            width: 30%;
+            display: grid;
+        
+        }
+        #third{
+            width:30%;
+            display: grid;
+        }
+        h4{
+            font-size: 15px;
+        }
+    }
     </style>
 </head>
 <body>
     <nav>
-        <div>
+        <div class="nav-img">
             <img src="../Student-Admission-Form/istockphoto.jpg" alt="">
         </div>
-        <div>
+        <div class="nav-h1">
             <h1>Admission Form</h1>
         </div>
     </nav>
